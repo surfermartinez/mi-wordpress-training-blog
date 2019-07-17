@@ -4,12 +4,27 @@
 </head>
 
 <body>
+
+
     <h1>Latest Posts</h1>
 
-    <?php $x = 1; while($x <= 12) { ?>
 
+    <div class="container">
+      <div class="row">
 
-    <?php $x++; } ?>
+            <?php while(have_posts()) : the_post(); ?>
+                <div class="col-sm">
+                    <div class="card" style="width: 18rem;">
+                      <img src="http://placehold.it/300x200" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title"><?php the_title();?></h5>
+                        <div class="card-text"><?php the_excerpt(); ?></div>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                </div>
+            <?php endwhile ?>
 
-    </ul>
+      </div>
+    </div>
 </body>
